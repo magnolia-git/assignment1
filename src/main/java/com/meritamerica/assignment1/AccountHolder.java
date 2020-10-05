@@ -2,10 +2,10 @@ package com.meritamerica.assignment1;
 
 public class AccountHolder {
 	
-	String firstName;
-	String middleName;
-	String lastName;
-	String ssn;
+	public String firstName;
+	public String middleName;
+	public String lastName;
+	private String ssn;
 	double checkingAccountOpeningBalance;
 	double savingsAccountOpeningBalance;
 	
@@ -62,7 +62,7 @@ public class AccountHolder {
 	
 	public String toString() {
 		return "Name: " + firstName + " " + middleName + " " + lastName + 
-				"\nSSN: " + ssn + "\nChecking Account Balance: $" + getCheckingAccount();
+				"\nSSN: " + ssn + "\nChecking Account Balance: $" + getCheckingAccount().getBalance();
 	}
 	
 }
