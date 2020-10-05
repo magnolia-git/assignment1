@@ -7,6 +7,7 @@ public class SavingsAccount {
 	 */
 	
 	private double accountBalance;
+	private double interestRate;
 	
 	/*
 	 * Constants:
@@ -18,6 +19,7 @@ public class SavingsAccount {
 	
 	public SavingsAccount(double openingBalance) {
 		this.accountBalance = openingBalance;
+		this.interestRate = 0.01;
 		System.out.println("New savings account created.");
 	}
 	
@@ -30,7 +32,7 @@ public class SavingsAccount {
 	}
 	
 	public double getInterestRate() {
-		return 0.0; //dummy
+		return interestRate;
 	}
 	
 	public boolean withdraw(double amount) {
@@ -38,7 +40,7 @@ public class SavingsAccount {
 			this.accountBalance -= amount;
 			return true;
 		} else {
-			System.out.println("You have insufficient funds to complete this transaction.\n" +
+			System.out.println("You have insufficient funds to complete this transaction. " +
 								"Please call your bank if you feel this information is incorrect.");
 			return false;
 		}
@@ -56,13 +58,18 @@ public class SavingsAccount {
 	}
 	
 	public double futureValue(int years) {
-		return 0.0; //dummy
+		return this.accountBalance * (Math.pow(1 + this.interestRate, years));
+	}
+	
+	private double truncate(double valueToTruncate) {
+		int newValue = (int)valueToTruncate * 100;
+		return valueToTruncate = newValue / 100;
 	}
 	
 	public String toString() {
-		return "Savings Account Balance: " + this.accountBalance + "\n" +
-				"Savings Account Interest Rate: " + "To be calculated" + "\n" +
-				"Savings Account Balance in 3 years: " + "to be calculated";//futureValue(3);
+		return "Savings Account Balance: $" + this.accountBalance + "\n" +
+				"Savings Account Interest Rate: " + this.interestRate + "\n" +
+				"Savings Account Balance in 3 years: $" + truncate(futureValue(3));
 	}
 	
 }
