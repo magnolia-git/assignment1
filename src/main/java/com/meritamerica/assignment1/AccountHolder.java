@@ -52,11 +52,11 @@ public class AccountHolder {
 		this.ssn = ssn;
 	}
 	
-	private CheckingAccount getCheckingAccount() {
+	public CheckingAccount getCheckingAccount() {
 		return CheckingAccount;
 	}
 	
-	private SavingsAccount getSavingsAccount() {
+	public SavingsAccount getSavingsAccount() {
 		return SavingsAccount;
 	}
 	
