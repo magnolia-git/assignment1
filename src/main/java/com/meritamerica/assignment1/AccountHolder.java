@@ -8,6 +8,8 @@ public class AccountHolder {
 	private String ssn;
 	double checkingAccountOpeningBalance;
 	double savingsAccountOpeningBalance;
+	CheckingAccount checkAccount;
+	SavingsAccount saveAccount;
 	
 	public AccountHolder(String firstName, String middleName, String lastName, String ssn, 
 						double checkingAccountOpeningBalance, double savingsAccountOpeningBalance) {
@@ -17,6 +19,8 @@ public class AccountHolder {
 		this.ssn = ssn;
 		this.checkingAccountOpeningBalance = checkingAccountOpeningBalance;
 		this.savingsAccountOpeningBalance = savingsAccountOpeningBalance;
+		checkAccount = new CheckingAccount(checkingAccountOpeningBalance);
+		saveAccount = new SavingsAccount(savingsAccountOpeningBalance);
 		
 	}
 	
@@ -53,11 +57,11 @@ public class AccountHolder {
 	}
 	
 	public CheckingAccount getCheckingAccount() {
-		return CheckingAccount;
+		return this.checkAccount;
 	}
 	
 	public SavingsAccount getSavingsAccount() {
-		return SavingsAccount;
+		return this.saveAccount;
 	}
 	
 	public String toString() {

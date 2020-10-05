@@ -2,30 +2,42 @@ package com.meritamerica.assignment1;
 
 public class CheckingAccount {
 	
-	double openingBalance;
+	double balance;
 	
-	public CheckingAccount(double openingBalance) {
-		this.openingBalance = openingBalance;
+	public CheckingAccount(double balance) {
+		this.balance = balance;
 	}
 	
-	double getBalance() {
-		
+	public double getBalance() {
+		return balance;
 	}
 	
-	double getInterestRate() {
-		
+	public double getInterestRate() {
+		return 0.0;
 	}
 	
-	boolean withdraw(double amount) {
-		
+	public boolean withdraw(double amount) {
+		if (amount > getBalance()) {
+			System.out.println("Insufficient funds.");
+			return false;
+		} else {
+			
+			return true;
+		}
 	}
 	
-	boolean deposit(double amount) {
-		
+	public boolean deposit(double amount) {
+		if (amount <= 0) {
+			System.out.println("Cannot add a value of $0 or less!");
+			return false;
+		} else {
+			
+			return true;
+		}
 	}
 	
-	double futureValue(int years) {
-		
+	public double futureValue(int years) {
+		return 0.0;
 	}
 	
 	public String toString() {
