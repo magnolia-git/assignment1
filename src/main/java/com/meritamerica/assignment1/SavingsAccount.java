@@ -59,7 +59,7 @@ public class SavingsAccount {
 	 */
 	public boolean deposit(double amount) {
 		if(amount <= 0) {
-			System.out.println("Error, please try again.");
+			System.out.println("Cannot add a value of $0 or less!");
 			return false;
 		} else {
 			this.accountBalance += amount;
@@ -92,7 +92,7 @@ public class SavingsAccount {
 	public String toString() {
 		return "Savings Account Balance: $" + this.accountBalance + "\n" +
 				"Savings Account Interest Rate: " + this.interestRate + "\n" +
-				"Savings Account Balance in 3 years: $" + truncate(futureValue(3));
+				"Savings Account Balance in 3 years: $" + this.truncate(this.futureValue(3));
 	}
 	
 }
