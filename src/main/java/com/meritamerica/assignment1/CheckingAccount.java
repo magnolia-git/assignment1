@@ -36,18 +36,23 @@ public class CheckingAccount {
 		}
 	}
 	
-	public double futureValue(int years) {
-		double toTruncate = getBalance() * (Math.pow(1 + getInterestRate(), years)) * 100;
+	public double truncateValue(double toTruncate) {
+		toTruncate *= 100; 
 		int truncatedInt = (int)toTruncate;
 		double truncatedDouble = (double)truncatedInt / 100;
 		return truncatedDouble;
+	}
+	
+	public double futureValue(int years) {
+		return getBalance() * (Math.pow(1 + getInterestRate(), years));
+
 	}
 	
 	public String toString() {
 		
 		return  "Checking Account Balance: $" + getBalance() + "\n" +
 				"Checking Account Interest Rate: 0.0001\n" +
-				"Checking Account Balance in 3 years: $" + futureValue(3);
+				"Checking Account Balance in 3 years: $" + truncateValue(futureValue(3));
 	}
 	
 }
