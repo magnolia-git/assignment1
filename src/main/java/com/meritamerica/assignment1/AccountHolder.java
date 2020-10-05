@@ -65,8 +65,14 @@ public class AccountHolder {
 	}
 	
 	public String toString() {
-		return "Name: " + firstName + " " + middleName + " " + lastName + 
-				"\nSSN: " + ssn + "\nChecking Account Balance: $" + getCheckingAccount().getBalance();
+		return "Name: " + firstName + " " + middleName + " " + lastName + "\n" +
+				"SSN: " + ssn + "\n" +
+				getCheckingAccount().toString() + "\n" +
+//				"Checking Account Interest Rate: " + getCheckingAccount().getInterestRate() + "\n" +
+//				"Checking Account Balance in 3 years: $" + getCheckingAccount().futureValue(3) + "\n" +
+				getSavingsAccount().toString();
+//				"Savings Account Interest Rate: " + getSavingsAccount().getInterestRate() + "\n" +
+//				"Savings Account Balance in 3 years: $" + getSavingsAccount().futureValue(3);
 	}
 	
 }
